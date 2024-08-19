@@ -1,7 +1,6 @@
 body{
     margin: 0;
     font-family: "Poppins", sans-serif;
-
 }
 svg{
     width: 30px;
@@ -12,40 +11,6 @@ a{
 }
 button{
     cursor: pointer;
-}
-:root{
-    --base-color: white;
-    --text-color: 070b1d;
-}
-.darkmode{
-    --base-color: #070b1d;
-    --text-color: white;
-}
-#theme-switch{
-  
-    height: 40px;
-    width: 40px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--base-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 50px;
-    right: 27%;
-}
-#theme-switch svg{
-    fill: var(--base-color);
-}
-#theme-switch svg:last-child{
-    display: none;
-}
-.darkmode #theme-switch svg:first-child{
-    display: none;
-}
-.darkmode #theme-switch svg:last-child{
-    display: block;
 }
 .head{
     font-family: "Matemasie", sans-serif;
@@ -70,9 +35,15 @@ header{
     align-items: center;
     padding: 20px 0;
 }
+
 .icon-cart{
-    position: relative;
-    
+    position: relative; 
+}
+.icon-cart:hover{
+    background-color: #E8BC0E;
+    border-radius: 30%;
+    top: 5px;
+    size-adjust: 60px;
 }
 .icon-cart span{
     background-color: red;
@@ -89,6 +60,7 @@ header{
 .title{
     font-size: x-large;
 }
+
 
 /*Cart-tab*/
 .cartTab{
@@ -117,9 +89,15 @@ header{
     border: none;
     font-family: "Poppins", sans-serif;
     font-family: 500; 
+    font-size: 16px;
 }
+
 .cartTab .btn button.close{
     background-color: #eee;
+}
+.cartTab .btn button.close:hover{
+    background-color: black;
+    color: white;
 }
 .cartTab .listCard{
     overflow: auto;
@@ -179,8 +157,8 @@ body.activeTabcart .container{
 }
 .listCart .item{
     display: grid;
-    margin: 7px;
-    grid-template-columns: 50px 100px 50px 1fr;
+    margin: 15px;
+    grid-template-columns: 60px 100px 50px 1fr;
     gap: 10px;
     align-items: center;
     text-align: center;
@@ -202,4 +180,62 @@ body.activeTabcart .container{
 }
 .listCart .item:nth-child(even){
     background: #eee1;
+}
+
+/* details */
+.detail{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    text-align: left;
+}
+.detail .image img{
+    width: 100%;
+}
+.detail .image{
+    position: relative;
+}
+.detail .image::before{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    content: '';
+    background: #94817733;
+    z-index: -1;
+    border-radius: 190px 100px 170px 180px;
+    left: calc(50% - 150px);
+    top: 50px;
+}
+.detail .name{
+    font-size: xx-large;
+    padding: 40px 0 0 0;
+    margin: 0 0 10px 0;
+}
+.detail .price{
+    font-weight: bold;
+    font-size: x-large;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+.detail .buttons button{
+    background-color: #eee;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: large;
+}
+.detail .buttons button:hover{
+    background-color: #E8BC0E;
+    box-shadow: 0 0 30px  #E8BC0E;
+}
+.detail svg{
+    width: 20px;
+}
+.detail .buttons button:nth-child(2){
+    background: #2f2f2f;
+    color: #eee;
+    display: inline-flex;
+    gap: 7px;
+    box-shadow: 0 10px 20px #2f2f2f;
 }

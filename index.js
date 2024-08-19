@@ -18,6 +18,7 @@ const loadTemplate = () => {
     })
 }
 loadTemplate();
+
 const initApp = () =>{ 
      let listProduct = document.querySelector('.listProduct'); 
      listProduct.innerHTML = null;
@@ -26,7 +27,9 @@ const initApp = () =>{
         newProduct.classList.add('item');
         newProduct.innerHTML =
         `
+        <a href="detail.html?id=${product.id}">
         <img src="${product.images}"/>
+        </a>
         <h2>${product.name}</h2>
         <div class="price">₱${product.price}</div>
         <button class="addCart"
