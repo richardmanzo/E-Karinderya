@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: "Poppins", sans-serif;
+    background-color: #0000;
 }
 svg{
     width: 30px;
@@ -19,14 +20,13 @@ button{
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-size: 30px;
-    stroke: #040404;
+    
 }
 .container{
-    width: 600px;
+    width: 800px;
     max-width: 90vw;
     margin: auto;
     text-align: center;
-    
     transition: 0.5s;
 }
 header{
@@ -37,7 +37,8 @@ header{
 }
 
 .icon-cart{
-    position: relative; 
+    position: relative;
+   
 }
 .icon-cart:hover{
     background-color: #E8BC0E;
@@ -59,6 +60,7 @@ header{
 }
 .title{
     font-size: x-large;
+    
 }
 
 
@@ -173,11 +175,16 @@ body.activeTabcart .container{
     color: #000;
     border-radius: 50%;
     cursor: pointer;
+    font-weight: bold;
+}
+.listCart .item .quantity span:hover{
+    background-color: #eedd44;
 }
 .listCart .item .quantity span:nth-child(2){
     background-color: transparent;
     color: #fff;
 }
+
 .listCart .item:nth-child(even){
     background: #eee1;
 }
@@ -186,25 +193,30 @@ body.activeTabcart .container{
 .detail{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: -50px;
     text-align: left;
+    margin-bottom: 50px;
+    font-size: small;
 }
 .detail .image img{
-    width: 100%;
+    width: 170px;
+    padding-top: 100px;
 }
 .detail .image{
     position: relative;
+    
 }
 .detail .image::before{
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 230px;
+    height: 220px;
     content: '';
     background: #94817733;
     z-index: -1;
     border-radius: 190px 100px 170px 180px;
     left: calc(50% - 150px);
     top: 50px;
+  
 }
 .detail .name{
     font-size: xx-large;
@@ -213,17 +225,18 @@ body.activeTabcart .container{
 }
 .detail .price{
     font-weight: bold;
-    font-size: x-large;
+    font-size: large;
     letter-spacing: 5px;
     margin-bottom: 20px;
 }
 .detail .buttons button{
     background-color: #eee;
     border: none;
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-radius: 20px;
     font-family: 'Poppins', sans-serif;
-    font-size: large;
+    font-size: medium;
+    margin-bottom: 10px;
 }
 .detail .buttons button:hover{
     background-color: #E8BC0E;
@@ -236,6 +249,48 @@ body.activeTabcart .container{
     background: #2f2f2f;
     color: #eee;
     display: inline-flex;
-    gap: 7px;
+    gap: 5px;
     box-shadow: 0 10px 20px #2f2f2f;
+    margin-bottom: 20px;
 }
+
+/* Style the modal container */
+#modal-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  
+  /* Style the modal content */
+  #modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Style the close button */
+  #close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ccc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #close-modal:hover {
+    background-color: #aaa;
+  }

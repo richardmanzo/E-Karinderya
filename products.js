@@ -3,7 +3,7 @@ const products = [
         "id": 1,
         "name": "Lugaw",
         "price": 50,
-        "description": "egg, rice soup",
+        "description": "Lugaw is usually eaten hot or warm, since the gruel congeals if left to cool. It can be reheated by adding a little bit of water. Dessert versions can be eaten cold or even partly frozen",
         "images": "images/lugaw.png"
     },
     {

@@ -33,34 +33,47 @@ const setProductInCart = (idProduct, quantity, position) => {
     localStorage.setItem('cart', JSON.stringify(cart) );
     refreshCartHTML();
 }
+
 const refreshCartHTML = () => {
     let listHTML = document.querySelector('.listCart');
     let totalHTML = document.querySelector('.icon-cart span');
     let totalQuantity = 0;
+    let totalPrice = 0;
     listHTML.innerHTML = null;
+    
     cart.forEach(item => {
         totalQuantity = totalQuantity + item.quantity;
         let position = products.findIndex((value) => value.id == item.product_id);
         let info = products[position];
-        let newITem = document.createElement('div');
-        newITem.classList.add('item');
-        newITem.innerHTML = 
+        let itemTotal = info.price * item.quantity;
+        totalPrice += itemTotal;
+        
+        let newItem = document.createElement('div');
+        newItem.classList.add('item');
+        newItem.innerHTML = 
         `
             <div class="image">
                 <img src="${info.images}" />   
             </div>
             <div class="name">${info.name}</div>
-                <div class="totalPrice">₱${info.price * item.quantity}</div>
+            <div class="totalPrice">₱${itemTotal.toFixed(2)}</div>
             <div class="quantity">
-            <span class="minus" data-id=${info.id}>-</span>
-            <span>${item.quantity}</span>
-            <span class="plus" data-id=${info.id}>+</span>
+                <span class="minus" data-id=${info.id}>-</span>
+                <span>${item.quantity}</span>
+                <span class="plus" data-id=${info.id}>+</span>
             </div>
-            `;
+        `;
 
-        listHTML.appendChild(newITem);
+        listHTML.appendChild(newItem);
     })
+    
     totalHTML.innerText = totalQuantity;
+
+    // Add total price display
+    let totalPriceHTML = document.createElement('div');
+    totalPriceHTML.classList.add('cartTotalPrice');
+    totalPriceHTML.innerHTML = `Total: ₱${totalPrice.toFixed(2)}`;
+    listHTML.appendChild(totalPriceHTML);
 }
 // event click for quantities
 document.addEventListener('click', (event) => {
@@ -87,4 +100,6 @@ document.addEventListener('click', (event) => {
     initApp();
 
 }
+
+
 export default cart;
