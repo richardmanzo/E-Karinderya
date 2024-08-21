@@ -35,7 +35,7 @@ const initApp = () =>{
 
     let listProduct = document.querySelector('.listProduct'); 
     listProduct.innerHTML = null;
-    products.forEach(product =>{
+    products.filter((value) => value.id != idProduct).forEach(product =>{
        let newProduct = document.createElement('div')
        newProduct.classList.add('item');
        newProduct.innerHTML =

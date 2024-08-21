@@ -313,7 +313,7 @@ body.activeTabcart .container{
   
   .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    
     padding: 15px;
     border: 1px solid #888;
     width: 30%;
@@ -342,3 +342,52 @@ body.activeTabcart .container{
     display: block;
   }
 
+/* responsiveness */
+@media screen and (max-width:992px) {
+    .listProduct{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .cartTab{
+    right: -450px;
+    transition: 0.5s;
+    }
+    .cartTab{       
+        width: 450px;     
+    }
+}
+
+@media screen and (max-width:767px) {
+    .listProduct{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .detail{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .detail .image img {
+        width: unset;
+        height: 20vh;
+        padding-left: 10px;
+        padding-top: 80px;
+    }
+    .container{
+        width: 350px;
+    }
+    .head{
+        font-size: 25px;
+    }
+    .detail .buttons{
+       padding-left: 10px;
+    }
+    .listCart .item{
+        grid-template-columns: 80px 80px 100px 1fr;
+    }
+    .listCart .item .quantity span{
+        width: 30px;
+    height: 30px;
+    }
+    .modal-content {
+        width: 60%;
+        margin: 50% auto;
+    }
+}
