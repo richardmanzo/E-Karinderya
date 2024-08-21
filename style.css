@@ -152,6 +152,41 @@ body.activeTabcart .container{
     border-radius: 20px;
 }
 
+
+
+/* list lugaw product
+
+.listLugaw .item  img{
+    width: 90%;
+    filter: drop-shadow(0 10px 20px #0009);
+}
+.listLugaw{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+.listLugaw .item{
+    background-color: #eeeee6;
+    padding: 20px;
+    border-radius: 20px;
+}
+.listLugaw .item h2{
+    font-weight: 500;
+    font-size: large;
+}
+.listLugaw .item .price{
+    letter-spacing: 2px;
+    font-size: small;
+}
+.listLugaw .item button{
+    background-color: #353432;
+    color: #eee;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+} */
+
 /* list cart item */
 .listCart::-webkit-scrollbar{
     width: 1px;

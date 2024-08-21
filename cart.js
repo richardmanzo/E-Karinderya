@@ -2,7 +2,6 @@ import products from "./products.js";
 
 const cart = () =>{
 
-// locator
 let iconCart = document.querySelector('.icon-cart');
 let closeBtn = document.querySelector('.cartTab .close');
 let checkout = document.querySelector('.checkout')
@@ -16,6 +15,8 @@ iconCart.addEventListener('click', () =>  {
 closeBtn.addEventListener('click', () =>  {
     body.classList.toggle('activeTabCart');
 })
+
+
 
 // function for products
 const setProductInCart = (idProduct, quantity, position) => {
@@ -34,6 +35,7 @@ const setProductInCart = (idProduct, quantity, position) => {
     localStorage.setItem('cart', JSON.stringify(cart) );
     refreshCartHTML();
 }
+
 
 // Modal HTML
 const modal = document.createElement('div');
@@ -117,6 +119,9 @@ const refreshCartHTML = () => {
     totalPriceHTML.innerHTML = `Total: ₱${totalPrice.toFixed(2)}`;
     listHTML.appendChild(totalPriceHTML);
 }
+
+
+
 // event click for quantities
 document.addEventListener('click', (event) => {
     let buttonClick = event.target;
@@ -132,15 +137,6 @@ document.addEventListener('click', (event) => {
         setProductInCart(idProduct, quantity, position);
     }
 })
-    // for storing data
-    const initApp = () =>{
-        if (localStorage.getItem('cart')){
-            cart =JSON.parse(localStorage.getItem('cart'));
-        }
-        refreshCartHTML();
-    }
-    initApp();
+
 }
-
-
 export default cart;

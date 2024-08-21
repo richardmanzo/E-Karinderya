@@ -23,10 +23,10 @@ const products = [
     },
     {
         "id": 4,
-        "name": "Kanin",
-        "price": 10,
-        "description": "*gb ram, 251 gb",
-        "images": "images/kanin.jpg"
+        "name": "Sisig",
+        "price": 150,
+        "description": "Fried",
+        "images": "images/sisig.jpg"
     },
     {
         "id": 5,
@@ -51,17 +51,24 @@ const products = [
     },
     {
         "id": 8,
-        "name": "Gatas",
-        "price": 20,
+       "name": "Kanin",
+        "price": 10,
         "description": "*gb ram, 251 gb",
-        "images": "images/gatas.jpg"
+        "images": "images/kanin.jpg"
     },
     {
-        "id": 8,
-       "name": "Fried Chicken",
-        "price": 50,
+        "id": 9,
+       "name": "Sisig",
+        "price": 150,
         "description": "Fried",
-        "images": "images/fried chicken.jpg"
+        "images": "images/sisig.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Kape",
+        "price": 20,
+        "description": "*gb ram, 251 gb",
+        "images": "images/kape.jpg"
     },
     {
         "id": 8,
@@ -72,17 +79,10 @@ const products = [
     },
     {
         "id": 8,
-        "name": "Gatas",
-        "price": 20,
+       "name": "Kanin",
+        "price": 10,
         "description": "*gb ram, 251 gb",
-        "images": "images/gatas.jpg"
-    },
-    {
-        "id": 8,
-        "name": "Gatas",
-        "price": 20,
-        "description": "*gb ram, 251 gb",
-        "images": "images/gatas.jpg"
+        "images": "images/kanin.jpg"
     },
     {
         "id": 8,
