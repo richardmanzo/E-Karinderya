@@ -2,9 +2,10 @@ import products from "./products.js";
 
 const cart = () =>{
 
-    // locator
+// locator
 let iconCart = document.querySelector('.icon-cart');
 let closeBtn = document.querySelector('.cartTab .close');
+let checkout = document.querySelector('.checkout')
 let body = document.querySelector('body');
 let cart = [];
 
@@ -33,6 +34,47 @@ const setProductInCart = (idProduct, quantity, position) => {
     localStorage.setItem('cart', JSON.stringify(cart) );
     refreshCartHTML();
 }
+
+// Modal HTML
+const modal = document.createElement('div');
+modal.classList.add('modal');
+modal.innerHTML = `
+  <div class="modal-content">
+    <h2>Are you sure you want to checkout?</h2>
+    <div class="modal-buttons">
+      <button class="modal-button modal-yes">Yes</button>
+      <button class="modal-button modal-no">No</button>
+    </div>
+  </div>
+`;
+
+// Modal event listeners
+const modalYesBtn = modal.querySelector('.modal-yes');
+const modalNoBtn = modal.querySelector('.modal-no');
+
+modalYesBtn.addEventListener('click', () => {
+  // Add your checkout logic here
+  console.log('Proceeding to checkout...');
+  modal.classList.remove('show');
+});
+
+modalNoBtn.addEventListener('click', () => {
+  modal.classList.remove('show');
+});
+
+// Append the modal to the body
+body.appendChild(modal);
+
+// Function to show the modal
+const showModal = () => {
+  modal.classList.add('show');
+};
+
+// Add the showModal function call where you want to trigger the modal
+checkout.addEventListener('click', () => {
+  body.classList.toggle('activeCheckout');
+  showModal();
+});
 
 const refreshCartHTML = () => {
     let listHTML = document.querySelector('.listCart');
@@ -98,7 +140,6 @@ document.addEventListener('click', (event) => {
         refreshCartHTML();
     }
     initApp();
-
 }
 
 

@@ -105,7 +105,7 @@ header{
     overflow: auto;
 }
 .cartTab .listCard::-webkit-scrollbar{
-    width: 0;
+    width: 1;
 }
 .cartTab{
     right: -350px;
@@ -153,14 +153,16 @@ body.activeTabcart .container{
 }
 
 /* list cart item */
-
+.listCart::-webkit-scrollbar{
+    width: 1px;
+}
 .listCart .item img{
     width: 100%;
 }
 .listCart .item{
     display: grid;
     margin: 15px;
-    grid-template-columns: 60px 100px 50px 1fr;
+    grid-template-columns: 60px 80px 80px 1fr;
     gap: 10px;
     align-items: center;
     text-align: center;
@@ -188,6 +190,12 @@ body.activeTabcart .container{
 .listCart .item:nth-child(even){
     background: #eee1;
 }
+.listCart .cartTotalPrice{
+    font-size: 23px;
+    margin: 20px;
+    background-color: #e7e3e3  ;
+    color: #000;
+}
 
 /* details */
 .detail{
@@ -200,7 +208,8 @@ body.activeTabcart .container{
 }
 .detail .image img{
     width: 170px;
-    padding-top: 100px;
+    padding-top: 90px;
+    padding-left: 120px;   
 }
 .detail .image{
     position: relative;
@@ -214,7 +223,7 @@ body.activeTabcart .container{
     background: #94817733;
     z-index: -1;
     border-radius: 190px 100px 170px 180px;
-    left: calc(50% - 150px);
+    left: calc(60% - 150px);
     top: 50px;
   
 }
@@ -254,43 +263,47 @@ body.activeTabcart .container{
     margin-bottom: 20px;
 }
 
-/* Style the modal container */
-#modal-container {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+/* Modal */
+.modal {
     display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
   }
   
-  /* Style the modal content */
-  #modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 15px;
+    border: 1px solid #888;
+    width: 30%;
   }
   
-  /* Style the close button */
-  #close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ccc;
-    color: #fff;
+  .modal-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+  
+  .modal-button {
     padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    
   }
   
-  #close-modal:hover {
-    background-color: #aaa;
+  .modal-button.modal-no {
+    background-color: #f44336;
   }
+  
+  .modal.show {
+    display: block;
+  }
+
